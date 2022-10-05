@@ -29,8 +29,6 @@ def get_drinks():
     '''
     try:
         query_result = Drink.query.all()
-        print(query_result)
-
     except:
         return jsonify({
             'success': False,
@@ -70,10 +68,7 @@ def post_new_drink(jwt):
     try:
         req = request.get_json()
         title = req.get('title')
-        print(title)
         recipe = req.get('recipe')
-        print(recipe)
-        print('This is being called')
         # Create a drink object with the request
         new_drink = Drink(
                     title=title,
